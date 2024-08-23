@@ -1,0 +1,58 @@
+QuranAcademy-Phase1/
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   ├── models/
+│   │   │   ├── __init__.py
+│   │   │   ├── user.py
+│   │   │   ├── content.py
+│   │   │   ├── submission.py
+│   │   │   └── assessment.py
+│   │   ├── api/
+│   │   │   └── v1/
+│   │   │       ├── __init__.py
+│   │   │       ├── auth.py
+│   │   │       ├── content.py
+│   │   │       ├── assessment.py
+│   │   │       ├── teacher.py
+│   │   │       ├── student.py
+│   │   │       ├── admin.py
+│   │   │       └── public.py
+│   │   ├── middleware/
+│   │   │   ├── __init__.py
+│   │   │   ├── role_based_middleware.py
+│   │   │   └── auth_middleware.py
+│   │   ├── error_handler/
+│   │   │   ├── __init__.py
+│   │   │   └── jwt_error_handler.py
+│   │   ├── services/
+│   │   │   ├── __init__.py
+│   │   │   ├── auth_service.py
+│   │   │   ├── content_service.py
+│   │   │   └── assessment_service.py
+│   │   ├── utils/
+│   │   │   ├── __init__.py
+│   │   │   └── helpers.py
+│   │   └── tests/
+│   │       ├── __init__.py
+│   │       ├── test_auth.py
+│   │       ├── test_content.py
+│   │       ├── test_user_api.py
+│   │       ├── test_course_model.py
+│   │       ├── test_lesson_model.py
+│   │       ├── test_user_model.py
+│   │       ├── test_password_hash.py
+│   │       ├── test_role.py
+│   │       ├── test_jwt_token.py
+│   │       ├── test_role_based_access.py
+│   │       └── test_assessment.py
+│   ├── migrations/
+│   ├── requirements.txt
+│   └── run.py
+├── config/
+│   ├── dev.env
+│   └── prod.env
+├── .env
+├── .gitignore
+└── README.md
