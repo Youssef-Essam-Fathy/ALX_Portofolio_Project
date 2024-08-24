@@ -2,6 +2,7 @@
 
 import os
 from datetime import timedelta
+from dotenv import load_dotenv
 
 class Config:
     """
@@ -52,6 +53,7 @@ class Config:
         The expiration time for JWT access tokens (default: 1 day).
     """
 
+    load_dotenv()
     DB_USERNAME = os.getenv('DB_USERNAME', 'root')
     DB_PASSWORD = os.getenv('DB_PASSWORD', 'root')
     DB_HOST = os.getenv('DB_HOST', 'localhost')
