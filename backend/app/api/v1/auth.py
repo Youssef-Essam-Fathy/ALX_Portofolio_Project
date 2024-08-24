@@ -61,6 +61,9 @@ def register():
     user = User.query.filter_by(username=data.get('username')).first()
     if user:
         return jsonify({"message": f"User already exists with id: {user.id}"}), 400
+    user = User.query.filter_by(email=data.get('email')).first()
+    if user:
+        return jsonify({"message": f"User already exists with id: {user.id}"}), 400
     role = data.get('role', UserRole.STUDENT)
     if role not in [UserRole.STUDENT, UserRole.TEACHER, UserRole.ADMIN]:
         return jsonify({"error": "Invalid role"}), 400
