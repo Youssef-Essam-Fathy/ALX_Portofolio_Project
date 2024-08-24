@@ -1,4 +1,4 @@
-QuranAcademy-Phase1/
+ALX_Portofolio_Project/
 ├── backend/
 │   ├── app/
 │   │   ├── __init__.py
@@ -31,9 +31,7 @@ QuranAcademy-Phase1/
 │   │   │   ├── auth_service.py
 │   │   │   ├── content_service.py
 │   │   │   └── assessment_service.py
-│   │   ├── utils/
-│   │   │   ├── __init__.py
-│   │   │   └── helpers.py
+│   │   │   
 │   │   └── tests/
 │   │       ├── __init__.py
 │   │       ├── test_auth.py
@@ -48,11 +46,11 @@ QuranAcademy-Phase1/
 │   │       ├── test_role_based_access.py
 │   │       └── test_assessment.py
 │   ├── migrations/
-│   ├── requirements.txt
+│   ├── APIDOC.md
+│   ├── Quran_Academy.postman_collection.json
 │   └── run.py
-├── config/
-│   ├── dev.env
-│   └── prod.env
 ├── .env
 ├── .gitignore
+├── backend_infra.csharp
+├── requirements.txt
 └── README.md
