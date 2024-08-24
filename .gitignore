@@ -1,2 +1,3 @@
 # .gitignore
 .env
+backend/app/services/__pycache__/
