@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, request
 from ...models.user import User, UserRole
 from ... import db
+from ...middleware.role_based_middleware import role_required
 from validator_collection import checkers
 
 bp = Blueprint('users', __name__)
@@ -40,6 +41,7 @@ def create_user():
 
 
 @bp.route('/users/', strict_slashes=False, methods=['GET'])
+@role_required(UserRole.ADMIN)
 def get_users():
     """
     Retrieve all users.
@@ -56,6 +58,7 @@ def get_users():
 
 
 @bp.route('/users/<int:user_id>', strict_slashes=False, methods=['GET'])
+@role_required(UserRole.ADMIN)
 def get_user(user_id):
     """
     Retrieve a user by ID.
@@ -80,6 +83,7 @@ def get_user(user_id):
 
 
 @bp.route('/users/<string:username>', strict_slashes=False, methods=['GET'])
+@role_required(UserRole.ADMIN)
 def get_user_by_username(username):
     """
     Retrieve a user by username.
@@ -104,6 +108,7 @@ def get_user_by_username(username):
 
 
 @bp.route('/users/by-role/<string:role>', strict_slashes=False, methods=['GET'])
+@role_required(UserRole.ADMIN)
 def get_user_by_role(role):
     """
     Retrieve users by role.
@@ -131,6 +136,7 @@ def get_user_by_role(role):
 
 
 @bp.route('/users/<int:user_id>', strict_slashes=False, methods=['PUT'])
+@role_required(UserRole.ADMIN, UserRole.TEACHER, UserRole.STUDENT)
 def update_user(user_id):
     """
     Update a user by ID.
@@ -173,6 +179,7 @@ def update_user(user_id):
 
 
 @bp.route('/users/<int:user_id>', strict_slashes=False, methods=['DELETE'])
+@role_required(UserRole.ADMIN)
 def delete_user(user_id):
     """
     Delete a user by ID.
