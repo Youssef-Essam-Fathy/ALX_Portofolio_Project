@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  api:
+    build: .
+    container_name: alx_api
+    ports:
+      - "5000:5000"
+    environment:
+      # These will be loaded from the .env file (see next step)
+      FLASK_ENV: production
+      SECRET_KEY: "${SECRET_KEY}"
+      DATABASE_URL: "postgres://postgres:example@db:5432/alx_db"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15-alpine
+    container_name: alx_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: alx_db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
