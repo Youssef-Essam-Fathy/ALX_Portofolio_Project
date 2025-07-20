@@ -1,6 +1,7 @@
 # pip3 install -r requirements.txt
 blinker
 click
+python-dotenv
 dominate
 flask
 Flask-Bootstrap
@@ -16,9 +17,10 @@ MarkupSafe
 mysql-connector-python
 mysqlclient
 packaging
-pip
-pkg-resources
-setuptools
+# pip
+# pkg-resources
+# setuptools
+gunicorn
 SQLAlchemy
 typing-extensions
 visitor
